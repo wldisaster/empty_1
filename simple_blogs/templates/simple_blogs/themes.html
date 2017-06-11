@@ -1,0 +1,23 @@
+{% extends "simple_blogs/base.html" %}
+
+{% block header %}
+    <h1>Themes</h1>
+{% endblock header %}
+
+{% block content %}
+
+    <ul>
+    {% for theme in themes %}
+        <li>
+            <h3>
+            <a href="{% url 'simple_blogs:theme' theme.id %}">{{ theme }}</a>
+            </h3>
+        </li>
+    {% empty %}
+        <li>还没添加主题</li>
+    {% endfor %}
+    </ul>
+
+    <h3><a href="{% url 'simple_blogs:new_theme' %}">Add a new theme:</a></h3>
+
+{% endblock content %}

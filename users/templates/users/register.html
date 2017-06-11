@@ -1,0 +1,10 @@
+{% extends "simple_blogs/base.html" %}
+{% block content %}
+    <form method="post" action="{% url 'users:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+        <button name="sumbit">register</button>
+    <input type="hidden" name="next" value="{% url 'simple_blogs:index' %}"/>
+    </form>
+{% endblock content %}

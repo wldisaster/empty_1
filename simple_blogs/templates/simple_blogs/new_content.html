@@ -1,0 +1,10 @@
+{% extends "simple_blogs/base.html" %}
+{% block content %}
+    <p><a href="{% url 'simple_blogs:theme' theme.id %}">{{ theme }}</a></p>
+    <p>Add a new content:</p>
+    <form action="{% url 'simple_blogs:new_content' theme.id %}" method="post">
+            {% csrf_token %}
+    {{ form.as_p }}
+        <button name="submit">add content</button>
+    </form>
+{% endblock content %}

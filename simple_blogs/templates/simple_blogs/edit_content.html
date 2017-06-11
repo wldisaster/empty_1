@@ -1,0 +1,10 @@
+{% extends "simple_blogs/base.html" %}
+{% block content %}
+    <p><a href="{% url 'simple_blogs:theme' theme.id %}">{{ theme }}</a></p>
+    <p>Edit content:</p>
+    <form action="{% url 'simple_blogs:edit_content' content.id %}" method="post">
+            {% csrf_token %}
+    {{ form.as_p }}
+        <button name="sumbit">save changes</button>
+    </form>
+{% endblock content %}

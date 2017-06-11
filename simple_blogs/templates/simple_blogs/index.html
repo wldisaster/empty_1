@@ -1,0 +1,16 @@
+{% extends "simple_blogs/base.html" %}
+
+{% block header %}
+    <div class="jumbotron">
+        <h1>Record your life</h1>
+    </div>
+{% endblock header %}
+
+{% block content %}
+<h2>
+    <a href="{% url 'users:register' %}">Register an account</a>
+</h2>
+<h2>
+    Start your performance
+</h2>
+{% endblock content %}
